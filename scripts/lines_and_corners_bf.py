@@ -130,7 +130,10 @@ def getLineBetweenPoints(p1, p2):
     return line
 
 def getDistanceToLine(p, l):
-    return abs(l.a*p.x + l.b*p.y + l.c)/math.sqrt(l.a**2 + l.b**2)
+    if l.a == 0 and l.b == 0:
+        return 0
+    else:
+        return abs(l.a*p.x + l.b*p.y + l.c)/math.sqrt(l.a**2 + l.b**2)
 
 def buildRvizLineList(lines, time):
  
